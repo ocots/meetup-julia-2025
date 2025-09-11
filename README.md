@@ -1,11 +1,3 @@
-<style>
-h1 { color: #4d64ae; }      /* bleu */
-h2 { color: #ca3c32; }      /* rouge */
-h3 { color: #399746; }      /* vert */
-p, li { color: #1a1a1a; }   /* texte noir/gris foncé */
-code { background-color: #F4F4F4; padding: 2px 4px; border-radius: 4px; }
-</style>
-
 # L’écosystème Julia *control-toolbox* pour le contrôle optimal
 _[Olivier Cots](https://github.com/ocots) – CNRS, Toulouse INP, IRIT_
 
@@ -62,46 +54,54 @@ f(x₁, x₂) = x₁^2 + 3x₂^2      # fonction quadratique
 ```
 
 ### 🌐 Écosystème riche et spécialisé
-Julia dispose d’un écosystème complet pour l'optimisation, le calcul scientifique en général, et le contrôle optimal en particulier :
+
+Julia dispose d’un écosystème complet pour l'optimisation, le calcul scientifique en général, et le contrôle optimal en particulier :
 
 - **🧮 Différentiation automatique et équations différentielles** :  
-  - `ForwardDiff.jl` et `Zygote.jl` pour calculer gradients, Jacobiennes et Hessiennes nécessaires aux solveurs NLP de second ordre.  
-  - `DifferentialEquations.jl` pour résoudre rapidement et précisément des équations différentielles ordinaires.
+  - [ForwardDiff.jl](https://juliadiff.org/ForwardDiff.jl/stable) et [Zygote.jl](https://fluxml.ai/Zygote.jl/stable) pour calculer gradients, Jacobiennes et Hessiennes.  
+  - [DifferentialEquations.jl](https://docs.sciml.ai/DiffEqDocs/stable) pour résoudre des équations différentielles ordinaires.
 
-- **📊 Optimisation** :  
-  - `JuMP.jl` pour formuler des problèmes linéaires, non linéaires, en nombre entiers de manière intuitive.  
-  - `JuliaSmoothOptimizers` pour modéliser, résoudre et analyser des problèmes d’optimisation de façon performante.
-  - `MadNLP.jl`, solveur intérieur-point entièrement en Julia, avec support GPU pour les grands NLPs.
+- **📊 Optimisation – solveurs et modeleurs** :  
+  - [JuMP.jl](https://jump.dev/JuMP.jl/stable) pour formuler des problèmes linéaires, non linéaires, en nombre entiers.  
+  - [JuliaSmoothOptimizers](https://jso.dev) pour modéliser, résoudre et analyser des problèmes d’optimisation.  
+  - [MadNLP.jl](https://madnlp.github.io/MadNLP.jl/stable), solveur intérieur-point entièrement en Julia, avec support GPU.  
+  - [ExaModels.jl](https://exanauts.github.io/ExaModels.jl/stable) compile ces modèles en code SIMD-friendly pour GPU, incluant la différentiation automatique et l’évaluation vectorisée.  
+  - [ADNLPModels.jl](https://jso.dev/ADNLPModels.jl/stable) : modélisation rapide de problèmes non linéaires en Julia, avec différentiation automatique et compatibilité [NLPModels.jl](https://jso.dev/NLPModels.jl/stable).  
 
-- **🟩 Calculs sur GPU** :  
-  - `CUDA.jl` pour programmer les GPU NVIDIA à différents niveaux d’abstraction.  
-  - `KernelAbstractions.jl` pour écrire des kernels portables multi-backend GPU.  
-  - `CUDSS.jl` pour résoudre efficacement des systèmes linéaires creux sur GPU.  
-  - L’ensemble permet d’exploiter le parallélisme SIMD naturel des OCPs, du modèle jusqu’au solveur.
+- **🟩 Calculs sur GPU** : l’ensemble permet d’exploiter le parallélisme SIMD naturel des OCPs, du modèle jusqu’au solveur.  
+  - [CUDA.jl](https://cuda.juliagpu.org/stable) pour programmer les GPU NVIDIA à différents niveaux d’abstraction.  
+  - [KernelAbstractions.jl](https://juliagpu.org/KernelAbstractions.jl/stable) pour écrire des kernels portables multi-backend GPU.  
+  - [CUDSS.jl](https://juliagpu.org/CUDSS.jl/stable) pour résoudre efficacement des systèmes linéaires creux sur GPU.  
 
-- **🖥️ Workflow contrôle optimal GPU-friendly** :  
-  - `OptimalControl.jl` pour définir les problèmes OCP symboliquement, proche de la formulation mathématique.  
-  - `ExaModels.jl` compile ces modèles en code SIMD-friendly pour GPU, incluant la différentiation automatique et l’évaluation vectorisée.  
-  - `MLStyle.jl` et `Moshi.jl` pour le pattern matching et la métaprogrammation, facilitant la construction de DSL personnalisés.
+- **🖥️ Langage dédié** :  
+  - [MLStyle.jl](https://thautwarm.github.io/MLStyle.jl/latest) et [Moshi.jl](https://thautwarm.github.io/Moshi.jl/latest) pour le pattern matching et la métaprogrammation, facilitant la construction de DSL personnalisés, pour une écriture des problèmes de contrôle optimal proche des mathématiques.
 
 - **🏆 Avantages clés pour le contrôle optimal** :  
   - Modélisation intuitive avec DSL proches de la notation mathématique.  
   - Accélération GPU et parallélisme SIMD pour résoudre de très grands OCPs.  
   - Extensibilité et portabilité grâce à la métaprogrammation et aux abstractions haut-niveau.  
-  - Intégration fluide avec la différentiation automatique et la gestion de la parcimonie.
+  - Intégration fluide avec la différentiation automatique et la gestion de la parcimonie.  
+
 
 ## 3. Panorama de *control-toolbox*
 
-L’écosystème *control-toolbox* est structuré en plusieurs packages modulaires, chacun jouant un rôle spécifique dans la définition et la résolution de problèmes de contrôle optimal :
+## 3. Panorama de *control-toolbox*
 
-- **`OptimalControl.jl`** : package central, offrant un DSL pour définir et résoudre des problèmes de contrôle optimal, avec prise en charge des méthodes directes et indirectes, et des accélérations GPU.
-- **`CTBase.jl`** : contient les éléments fondamentaux les plus génériques de l’écosystème : exceptions, concept de description, et quelques fonctions auxiliaires réutilisables par les autres packages.
-- **`CTModels.jl`** : définit les types principaux pour les modèles de contrôle optimal, incluant les structures pour les problèmes et les solutions. Ce package fournit également tous les outils pour construire (`setter`, `builder`), afficher (`print`, `plot`) et interroger (`getter`) ces modèles.
-- **`CTDirect.jl`** : implémente la transcription directe des problèmes de contrôle optimal en problèmes de programmation non linéaire (NLP) et leur résolution.
-- **`CTFlows.jl`** : propose des intégrateurs pour les systèmes dynamiques, incluant des flots classiques, hamiltoniens, et issus de problèmes de contrôle optimal.
-- **`CTParser.jl`** : fournit un parser pour définir un problème de contrôle optimal via une syntaxe abstraite, facilitant l’interfaçage avec d’autres outils.
+L’écosystème *control-toolbox* rassemble plusieurs packages Julia dédiés au contrôle mathématique et à ses applications.
 
-Cette organisation modulaire garantit flexibilité, extensibilité et cohérence.
+Le package central, [**OptimalControl.jl**](https://github.com/control-toolbox/OptimalControl.jl), fournit un DSL pour modéliser et résoudre des problèmes de contrôle optimal définis par des équations différentielles ordinaires. Il prend en charge les méthodes directes et indirectes, et s’exécute aussi bien sur CPU que sur GPU.  
+
+En complément, [**OptimalControlProblems.jl**](https://github.com/control-toolbox/OptimalControlProblems.jl) propose une collection de problèmes de contrôle optimal de référence, formulés en Julia. Chaque problème est disponible à la fois dans le DSL **OptimalControl** et dans **JuMP**, avec des versions discrétisées prêtes à être résolues avec le solveur de votre choix. Ce package est particulièrement utile pour le benchmarking et la comparaison de différentes stratégies de résolution.  
+
+Les autres briques de l’écosystème sont plus internes, mais assurent une architecture modulaire, flexible et cohérente :  
+
+- **[`CTBase.jl`](https://github.com/control-toolbox/CTBase.jl)** : regroupe les éléments fondamentaux les plus génériques de l’écosystème : exceptions, concept de description, et fonctions auxiliaires réutilisables.  
+- **[`CTModels.jl`](https://github.com/control-toolbox/CTModels.jl)** : définit les types principaux pour les modèles de contrôle optimal (problèmes, solutions), ainsi que tous les outils pour les construire (`setter`, `builder`), les afficher (`print`, `plot`) et les interroger (`getter`).  
+- **[`CTDirect.jl`](https://github.com/control-toolbox/CTDirect.jl)** : implémente la transcription directe des problèmes de contrôle optimal en problèmes de programmation non linéaire (NLP) et leur résolution.  
+- **[`CTFlows.jl`](https://github.com/control-toolbox/CTFlows.jl)** : propose des intégrateurs pour les systèmes dynamiques, incluant des flots classiques, hamiltoniens, et issus de problèmes de contrôle optimal.  
+- **[`CTParser.jl`](https://github.com/control-toolbox/CTParser.jl)** : fournit un parser pour définir un problème de contrôle optimal via une syntaxe abstraite, facilitant l’interfaçage avec d’autres outils.  
+
+👉 L’ensemble de ces packages est disponible sur le dépôt [*control-toolbox*](https://github.com/orgs/control-toolbox/repositories?type=all). Le package principal est organisé ainsi : 
 
 <div align="center">
 
@@ -214,3 +214,14 @@ plot(sol)
 - GitHub : [https://github.com/control-toolbox](https://github.com/control-toolbox)
 - Documentation en ligne
 - Contact : Olivier Cots
+
+<!--
+CSS style
+-->
+<style>
+h1 { color: #4d64ae; }      /* bleu */
+h2 { color: #ca3c32; }      /* rouge */
+h3 { color: #399746; }      /* vert */
+p, li { color: #1a1a1a; }   /* texte noir/gris foncé */
+code { background-color: #F4F4F4; padding: 2px 4px; border-radius: 4px; }
+</style>
