@@ -9,6 +9,7 @@ style: |
         padding-bottom: 1em;    /* optionnel : ajuste le bas */
         background-color: white;
         color: black;
+        font-size: 2.0em;
     }
     h1 { color: #4d64ae; }      /* bleu */
     h2 { color: #ca3c32; }      /* rouge */
@@ -16,7 +17,7 @@ style: |
     p, li { color: #1a1a1a; }   /* texte noir/gris foncé */
     code { background-color: #F4F4F4; padding: 2px 4px; border-radius: 4px; }
     img[alt~="center"] { display: block; margin: 0 auto; }
-    .caption { text-align: center; font-style: italic; font-size: 0.9em; }
+    .caption { text-align: center; font-style: italic; font-size: 0.8em; }
 ---
 
 # L’écosystème Julia *control-toolbox* pour le contrôle optimal
@@ -27,7 +28,7 @@ Jean-Baptiste Caillau • Joseph Gergaud • Pierre Martinon • Sophia Sed
 
 ---
 
-## Abstract
+## Contexte
 
 Le projet **control-toolbox** rassemble plusieurs packages Julia pour modéliser et résoudre des problèmes de contrôle optimal.  
 
@@ -47,7 +48,7 @@ Le projet **control-toolbox** rassemble plusieurs packages Julia pour modéliser
 - Domaine : math appliquées, optimisation, simulation numérique  
 - Applications : robotique, aéronautique, finance, énergie  
 
-![w:640 center](spatial.png)
+![w:540 center](spatial.png)
 <p class="caption">Transfert Terre–Lune – Mission Apollo XI</p>
 
 ---
@@ -60,9 +61,17 @@ Julia est un langage de haut niveau, rapide et dynamique, idéal pour le calcul 
 - **Syntaxe expressive** : proche des notations mathématiques, support Unicode  
 
 ```julia
-f(x₁, x₂) = x₁^2 + 3x₂^2
-∇f(x₁, x₂) = [2x₁, 6x₂]
-∇f(1.0, 2.0)  # [2.0, 12.0]
+julia> f(x₁, x₂) = x₁^2 + 3x₂^2
+
+julia> ∇f(x₁, x₂) = [
+  2x₁, 
+  6x₂
+]
+
+julia> ∇f(1.0, 2.0)
+2-element Vector{Float64}:
+  2.0
+ 12.0
 ```
 
 ---
@@ -93,11 +102,11 @@ f(x₁, x₂) = x₁^2 + 3x₂^2
 <tr>
 <td style="width:50%; vertical-align:top;">
 
-- **CTBase.jl** : éléments fondamentaux, exceptions, fonctions utilitaires  
-- **CTModels.jl** : types de modèles et solutions, outils de construction et visualisation  
-- **CTDirect.jl** : transcription directe en NLP et résolution  
-- **CTFlows.jl** : intégrateurs pour systèmes dynamiques  
-- **CTParser.jl** : parser DSL pour interface flexible  
+- **CTBase.jl** : exceptions, fonctions utilitaires
+- **CTModels.jl** : types des modèles, solutions, setters, getters et visualisation  
+- **CTDirect.jl** : discrétisation et résolution  
+- **CTFlows.jl** : systèmes hamiltoniens et flots
+- **CTParser.jl** : défintion abstraite et parser
 
 </td>
 <td style="width:50%; text-align:center; vertical-align:top;">
