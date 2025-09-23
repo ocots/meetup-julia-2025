@@ -1,0 +1,40 @@
+name: Generate and Deploy Slides
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'presentation.md'
+      - 'diagramme.png'  # Ajoutez ici tous les autres fichiers statiques utilisés
+
+jobs:
+  generate-slides:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install Marp CLI
+        run: npm install -g @marp-team/marp-cli
+
+      - name: Generate HTML slides
+        run: |
+          marp presentation.md --html --allow-local-files -o index.html
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: .
+          single-commit: true
+          clean: true
+          target-folder: slides
+          commit-message: "Deploy slides"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

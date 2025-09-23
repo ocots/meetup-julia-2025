@@ -1,10 +1,11 @@
 # L’écosystème Julia *control-toolbox* pour le contrôle optimal
-_[Olivier Cots](https://github.com/ocots) – CNRS, Toulouse INP, IRIT_
 
-En collaboration avec 
-[Jean-Baptiste Caillau](http://caillau.perso.math.cnrs.fr), 
-[Joseph Gergaud](https://github.com/joseph-gergaud), 
-[Pierre Martinon](https://github.com/PierreMartinon), 
+*[Olivier Cots](https://github.com/ocots) – CNRS, Toulouse INP, IRIT*
+
+En collaboration avec
+[Jean-Baptiste Caillau](http://caillau.perso.math.cnrs.fr),
+[Joseph Gergaud](https://github.com/joseph-gergaud),
+[Pierre Martinon](https://github.com/PierreMartinon),
 [Sophia Sed](https://sed-sam-blog.gitlabpages.inria.fr).
 
 ### Abstract
@@ -17,8 +18,6 @@ Le projet <a href="https://github.com/control-toolbox" style="display:inline-fle
   Julia
 </a> pour modéliser et résoudre des problèmes de contrôle optimal. Autour du package central **OptimalControl.jl**, il propose une architecture modulaire, performante et adaptée au calcul CPU et GPU, permettant de connecter formulation mathématique, simulation et optimisation avancée.  
 
----
-
 ## 1. Introduction
 
 Le **contrôle optimal** consiste à déterminer la trajectoire optimale d’un système dynamique sous contraintes, en minimisant ou maximisant un critère donné. Il combine mathématiques appliquées, optimisation et simulation numérique, avec des applications dans la robotique, l’aéronautique, la finance et l’énergie.  
@@ -27,15 +26,13 @@ Ici, nous présentons un **écosystème Julia** capable de modéliser, résoudre
 
 <figure style="text-align: center;">
   <img 
-    src="spatial.png" 
-    alt="Transfert Terre-Lune Apollo XI" 
+    src="spatial.png"
+    alt="Transfert Terre-Lune Apollo XI"
     width="100%"
     style="margin-top:10px; margin-bottom:10px; max-width:500px"
     />
   <figcaption><em>Figure :</em> Transfert Terre–Lune de la mission <strong>Apollo XI</strong>.</figcaption>
 </figure>
-
----
 
 ## 2. Pourquoi Julia ? 🚀
 
@@ -100,7 +97,7 @@ Les autres briques de l’écosystème sont plus internes, mais assurent une arc
 - **[CTFlows.jl](https://github.com/control-toolbox/CTFlows.jl)** : propose des intégrateurs pour les systèmes dynamiques, incluant des flots classiques, hamiltoniens, et issus de problèmes de contrôle optimal.  
 - **[CTParser.jl](https://github.com/control-toolbox/CTParser.jl)** : fournit un parser pour définir un problème de contrôle optimal via une syntaxe abstraite, facilitant l’interfaçage avec d’autres outils.  
 
-👉 L’ensemble de ces packages est disponible sur le dépôt [*control-toolbox*](https://github.com/orgs/control-toolbox/repositories?type=all). Le package principal est organisé ainsi : 
+👉 L’ensemble de ces packages est disponible sur le dépôt [*control-toolbox*](https://github.com/orgs/control-toolbox/repositories?type=all). Le package principal est organisé ainsi :
 
 <div align="center">
 
@@ -210,8 +207,6 @@ plot(sol)
 
 👉 Une démonstration complète, avec la résolution et les graphiques détaillés, est disponible dans la documentation : [Double intégrateur – résolution et visualisation](https://control-toolbox.org/OptimalControl.jl/stable/example-double-integrator-energy.html).
 
----
-
 ## 5. Architecture logicielle et bonnes pratiques 🧩
 
 L’écosystème *control-toolbox* repose sur une architecture modulaire, conçue pour assurer **clarté**, **performance** et **pérennité**.
@@ -265,8 +260,6 @@ L’écosystème *control-toolbox* repose sur une architecture modulaire, conçu
 
 - **Contribution ouverte** : issues, pull requests et discussions via GitHub.  
 
----
-
 ## 7. Conclusion
 
 ### Perspectives
@@ -279,11 +272,9 @@ L’écosystème *control-toolbox* repose sur une architecture modulaire, conçu
 
 - GitHub : [https://github.com/control-toolbox](https://github.com/control-toolbox)
 - Documentation en ligne : [https://control-toolbox.org](https://control-toolbox.org)
-- Contact : Olivier Cots, olivier.cots@irit.fr
+- Contact : Olivier Cots, [olivier.cots@irit.fr](mailto:olivier.cots@irit.fr)
 
-<figure style="text-align: center;">
-<img src="control-toolbox.png" alt="reproducibility" width="100%" style="margin-top:10px; margin-bottom:10px; max-width:800px;"/>
-</figure>
+![reproducibility](control-toolbox.png)
 
 <!--
 CSS style
@@ -294,4 +285,9 @@ h2 { color: #ca3c32; }      /* rouge */
 h3 { color: #399746; }      /* vert */
 p, li { color: #1a1a1a; }   /* texte noir/gris foncé */
 code { background-color: #F4F4F4; padding: 2px 4px; border-radius: 4px; }
+img[alt="reproducibility"] {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+}
 </style>
