@@ -309,13 +309,16 @@ julia> ∇f(1.0, 2.0)
 ```
 
 </div>
-<div class="column">
+<div class="column ecosystem">
 
 ### 🌐 Écosystème riche et spécialisé
 
 <style>
 .column h3:first-child {
-    margin-top: 0.4em;
+    margin-top: -0.5em;
+}
+.column.ecosystem {
+    margin-left: 1.5em;
 }
 </style>
 
@@ -324,10 +327,10 @@ julia> ∇f(1.0, 2.0)
 - **GPU** : CUDA.jl, KernelAbstractions.jl, CUDSS.jl  
 - **DSL** : MLStyle.jl, Moshi.jl pour le pattern matching
 
-</div>
-</div>
-
 **Avantages clés** : modélisation intuitive, parallélisme SIMD/GPU, extensibilité, différentiation automatique...
+
+</div>
+</div>
 
 ---
 
