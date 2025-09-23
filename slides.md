@@ -4,6 +4,7 @@ theme: default
 paginate: true
 size: 16:9
 math: mathjax
+header: "<div class='qr-code'></div>"
 style: |
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
     @import url('https://cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.css');
@@ -35,6 +36,19 @@ style: |
         letter-spacing: 0.01em;
     }
     
+    /* Affichage du QR code avec une div personnalisée */
+    .qr-code {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        width: 100px;
+        height: 100px;
+        background-image: url('figs/ct-qr-code.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        z-index: 1000;
+    }
+
     /* Titres */
     h1 { font-size: calc(var(--base-font-size) * 2.2); margin: 0 0 0.8em 0; }
     h2 { font-size: calc(var(--base-font-size) * 1.8); margin: 0.8em 0 0.6em 0; }
@@ -210,6 +224,8 @@ style: |
         padding-bottom: 0.2em;
     }
     
+    /* La pagination est gérée par Marp */
+
     section > h3 {
         margin: 0.2em 0 0.5em 0;
         flex: 0 0 auto;
