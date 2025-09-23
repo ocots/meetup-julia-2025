@@ -27,14 +27,8 @@ jobs:
           marp slides.md --html --allow-local-files -o index.html
 
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          branch: gh-pages
-          folder: .
-          clean: true
-          target-folder: slides
-          commit-message: "Deploy slides"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # Utilisez un PAT si nécessaire
-          # GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
+          keep_files: false
