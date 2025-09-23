@@ -141,7 +141,7 @@ Le projet **control-toolbox** rassemble plusieurs packages Julia pour modéliser
 - Applications : robotique, aéronautique, finance, énergie  
 
 <div>
-<img src="spatial.png" class="centered-image" alt="" width="540px">
+<img src="figs/spatial.png" class="centered-image" alt="" width="540px">
 <p class="caption">Transfert Terre–Lune – Mission Apollo XI</p>
 </div>
 
@@ -220,7 +220,7 @@ julia> ∇f(1.0, 2.0)
 }
 </style>
 <div class="column">
-<img src="diagramme.png" class="centered-image diagramme" alt="Architecture modulaire et cohérente" width="450px">
+<img src="figs/diagramme.png" class="centered-image diagramme" alt="Architecture modulaire et cohérente" width="450px">
 <p class="caption">💡 Architecture modulaire et cohérente</p>
 </div>
 </div>
@@ -285,7 +285,7 @@ using NLPModelsIpopt
 sol = solve(ocp)
 ```
 
-![w:520px](solve.png)
+![w:520px](figs/solve.png)
 
 </div>
 
@@ -298,7 +298,7 @@ using Plots
 plot(sol)
 ```
 
-![w:550px](plot.png)
+![w:550px](figs/plot.png)
 
 </div>
 </div>
@@ -333,14 +333,14 @@ plot(sol)
 
 **Actions CI/CD**
 
-<img src="actions.png" alt="Actions CI/CD" style="max-width: 100%;"/>
+<img src="figs/actions.png" alt="Actions CI/CD" style="max-width: 100%;"/>
 
 </div>
 <div class="column">
 
 **Détection d'incompatibilités**
 
-<img src="breakages.png" alt="Détection d'incompatibilités" style="max-width: 100%;"/>
+<img src="figs/breakages.png" alt="Détection d'incompatibilités" style="max-width: 100%;"/>
 
 </div>
 </div>
@@ -364,7 +364,7 @@ plot(sol)
 
 **Reproductibilité**
 
-<img src="reproduce.png" alt="Reproductibilité" style="max-width: 100%;"/>
+<img src="figs/reproduce.png" alt="Reproductibilité" style="max-width: 100%;"/>
 
 </div>
 <div class="column">
@@ -403,7 +403,7 @@ plot(sol)
 - 📧 Contact : Olivier Cots, [olivier.cots@irit.fr](mailto:olivier.cots@irit.fr)
 
 <div>
-  <img src="control-toolbox.png" alt="Control Toolbox" class="presentation-logo"/>
+  <img src="figs/control-toolbox.png" alt="Control Toolbox" class="presentation-logo"/>
 </div>
 
 <style>

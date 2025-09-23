@@ -5,7 +5,7 @@ on:
     branches: [ main ]
     paths:
       - 'presentation.md'
-      - 'diagramme.png'  # Ajoutez ici tous les autres fichiers statiques utilisés
+      - 'figs/*'
 
 jobs:
   generate-slides:
@@ -18,7 +18,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-          cache: 'npm'
+          # Suppression du cache npm inutile
 
       - name: Install Marp CLI
         run: npm install -g @marp-team/marp-cli

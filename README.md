@@ -26,7 +26,7 @@ Ici, nous présentons un **écosystème Julia** capable de modéliser, résoudre
 
 <figure style="text-align: center;">
   <img 
-    src="spatial.png"
+    src="figs/spatial.png"
     alt="Transfert Terre-Lune Apollo XI"
     width="100%"
     style="margin-top:10px; margin-bottom:10px; max-width:500px"
@@ -189,7 +189,7 @@ using NLPModelsIpopt
 sol = solve(ocp)
 ```
 
-<img src="solve.png" alt="solve" width="100%" style="margin-top:10px; margin-bottom:10px;"/>
+<img src="figs/solve.png" alt="solve" width="100%" style="margin-top:10px; margin-bottom:10px;"/>
 
 </div>
 
@@ -200,7 +200,7 @@ using Plots
 plot(sol)
 ```
 
-<img src="plot.png" alt="plot" width="100%" style="margin-top:10px; margin-bottom:10px;"/>
+<img src="figs/plot.png" alt="plot" width="100%" style="margin-top:10px; margin-bottom:10px;"/>
 
 </div>
 </div>
@@ -227,10 +227,10 @@ L’écosystème *control-toolbox* repose sur une architecture modulaire, conçu
 
 <div style="display: flex; gap: 20px;">
 <div style="flex: 1;">
-<img src="actions.png" alt="solve" width="100%" style="margin-top:10px; margin-bottom:10px;"/>
+<img src="figs/actions.png" alt="actions" width="100%" style="margin-top:10px; margin-bottom:10px;"/>
 </div>
 <div style="flex: 1;">
-<img src="breakages.png" alt="plot" width="100%" style="margin-top:10px; margin-bottom:10px;"/>
+<img src="figs/breakages.png" alt="breakages" width="100%" style="margin-top:10px; margin-bottom:10px;"/>
 </div>
 </div>
 
@@ -256,7 +256,7 @@ L’écosystème *control-toolbox* repose sur une architecture modulaire, conçu
   - un catalogue de [problèmes](https://control-toolbox.org/OptimalControlProblems.jl/stable) déjà modélisés sous OptimalControl et JuMP pour le benchmarking.  
 
 - **Exemples reproductibles** : chaque package, tutoriel ou application fournit un `Project.toml`, un `Manifest.toml` et les informations de configuration machine.  
-<img src="reproduce.png" alt="reproducibility" width="100%" style="margin-top:10px; margin-bottom:10px; max-width:700px;"/>
+<img src="figs/reproduce.png" alt="reproducibility" width="100%" style="margin-top:10px; margin-bottom:10px; max-width:700px;"/>
 
 - **Contribution ouverte** : issues, pull requests et discussions via GitHub.  
 
@@ -274,7 +274,7 @@ L’écosystème *control-toolbox* repose sur une architecture modulaire, conçu
 - Documentation en ligne : [https://control-toolbox.org](https://control-toolbox.org)
 - Contact : Olivier Cots, [olivier.cots@irit.fr](mailto:olivier.cots@irit.fr)
 
-![reproducibility](control-toolbox.png)
+![reproducibility](figs/control-toolbox.png)
 
 <!--
 CSS style
