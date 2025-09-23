@@ -4,7 +4,7 @@ on:
   push:
     branches: [ main ]
     paths:
-      - 'presentation.md'
+      - 'slides.md'
       - 'figs/*'
 
 jobs:
@@ -24,7 +24,7 @@ jobs:
 
       - name: Generate HTML slides
         run: |
-          marp presentation.md --html --allow-local-files -o index.html
+          marp slides.md --html --allow-local-files -o index.html
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
