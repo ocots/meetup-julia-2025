@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Important pour les opérations Git ultérieures
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -32,4 +34,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./
           keep_files: false
-          force_orphan: true
+          force_orphan: false  # Important pour ne pas essayer de réinitialiser la branche
+          disable_nojekyll: true  # Puisque vous avez déjà ajouté .nojekyll
