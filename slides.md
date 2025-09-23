@@ -5,19 +5,156 @@ paginate: true
 size: 16:9
 math: mathjax
 style: |
-    /* Style par défaut pour toutes les slides */
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+    @import url('https://cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.css');
+    
+    :root {
+        --font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        --code-font: 'Hack', 'Fira Code', 'Consolas', monospace;
+        --base-font-size: 24px;
+        --heading-scale: 1.25;
+    }
+    
+    @page {
+        size: 1210px 681px;
+        margin: 0;
+    }
+    
+    /* Styles de base */
     section {
-        padding: 1.0em 2em 1em 2em;  /* haut, droite, bas, gauche */
+        font-family: var(--font-family);
+        font-size: var(--base-font-size);
+        line-height: 1.5;
+        padding: 1.25em 2.5em;
         background-color: white;
-        color: black;
-        font-size: 2.0em;
+        color: #222;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         min-height: 100%;
+        letter-spacing: 0.01em;
     }
     
-    /* Style personnalisé pour les colonnes */
+    /* Titres */
+    h1 { font-size: calc(var(--base-font-size) * 2.2); margin: 0 0 0.8em 0; }
+    h2 { font-size: calc(var(--base-font-size) * 1.8); margin: 0.8em 0 0.6em 0; }
+    h3 { font-size: calc(var(--base-font-size) * 1.4); margin: 0.6em 0 0.4em 0; }
+    p, li { margin: 0.5em 0; }
+    
+    /* Styles pour le code */
+    code {
+        font-family: var(--code-font);
+        font-size: 0.85em;
+        background: #f5f5f5;
+        padding: 0.1em 0.3em;
+        border-radius: 3px;
+    }
+    
+    pre {
+        font-family: var(--code-font);
+        font-size: 0.8em;
+        line-height: 1.4;
+        background: #f8f8f8;
+        border: 1px solid #e1e4e8;
+        border-radius: 6px;
+        padding: 1em;
+        overflow: auto;
+        margin: 0.8em 0;
+    }
+    
+    /* Colonnes */
+    .custom-columns {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5em;
+        width: 100%;
+        margin: 1em 0;
+    }
+    
+    .column {
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    /* Images */
+    .centered-image {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        margin: 1em auto;
+        border-radius: 4px;
+    }
+    
+    /* Première page */
+    section.title {
+        justify-content: center;
+        text-align: center;
+        padding-top: 15%;
+    }
+    
+    section.title h1 {
+        font-size: calc(var(--base-font-size) * 2.5);
+        margin-bottom: 0.5em;
+    }
+    
+    /* Liste à puces */
+    ul, ol {
+        margin: 0.5em 0;
+        padding-left: 1.5em;
+    }
+    
+    li {
+        margin: 0.3em 0;
+        padding-left: 0.3em;
+    }
+    
+    /* Liens */
+    a {
+        color: #0366d6;
+        text-decoration: none;
+    }
+    
+    a:hover {
+        text-decoration: underline;
+    }
+    
+    /* Citations */
+    blockquote {
+        border-left: 4px solid #dfe2e5;
+        color: #6a737d;
+        padding: 0 1em;
+        margin: 1em 0;
+        font-style: italic;
+    }
+    
+    /* Tableaux */
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 1em 0;
+        font-size: 0.9em;
+    }
+    
+    th, td {
+        border: 1px solid #dfe2e5;
+        padding: 0.5em 1em;
+        text-align: left;
+    }
+    
+    th {
+        background-color: #f6f8fa;
+        font-weight: 600;
+    }
+    
+    /* Légendes */
+    .caption {
+        font-size: 0.8em;
+        color: #6a737d;
+        text-align: center;
+        margin-top: -0.5em;
+        margin-bottom: 1em;
+    }
     .custom-columns {
         display: grid;
         grid-template-columns: 1fr 2fr;
@@ -136,7 +273,7 @@ Le projet **control-toolbox** rassemble plusieurs packages Julia pour modéliser
 
 ## 1. Introduction
 
-- **Contrôle optimal** = trajectoire optimale d’un système sous contraintes  
+- **Contrôle optimal** = trajectoire optimale d’un système dynamique contrôlé sous contraintes  
 - Domaine : math appliquées, optimisation, simulation numérique  
 - Applications : robotique, aéronautique, finance, énergie  
 
@@ -178,7 +315,7 @@ julia> ∇f(1.0, 2.0)
 
 <style>
 .column h3:first-child {
-    margin-top: -0.1em;
+    margin-top: 0.4em;
 }
 </style>
 
@@ -216,7 +353,7 @@ julia> ∇f(1.0, 2.0)
 
 <style>
 .column .diagramme {
-    margin-top: -2.0em;
+    margin-top: -1.5em;
 }
 </style>
 <div class="column">
