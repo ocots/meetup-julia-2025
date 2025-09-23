@@ -18,7 +18,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-          # Suppression du cache npm inutile
 
       - name: Install Marp CLI
         run: npm install -g @marp-team/marp-cli
@@ -32,9 +31,10 @@ jobs:
         with:
           branch: gh-pages
           folder: .
-          single-commit: true
           clean: true
           target-folder: slides
           commit-message: "Deploy slides"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Utilisez un PAT si nécessaire
+          # GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
