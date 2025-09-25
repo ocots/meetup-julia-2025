@@ -179,6 +179,13 @@ style: |
         min-width: 0; /* Pour éviter les problèmes de débordement */
     }
     
+    .custom-columns.community {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        gap: 20px;
+        width: 100%;
+    }
+    
     /* Style pour centrer les images */
     /* Style pour les images centrées avec conteneur */
     div > .centered-image {
@@ -197,7 +204,7 @@ style: |
     /* Style pour le contenu de la première page */
     section.title {
         justify-content: flex-start;
-        padding-top: 20%; /* Ajustez cette valeur pour déplacer tout le bloc vers le bas */
+        padding-top: 12%; /* Ajustez cette valeur pour déplacer tout le bloc vers le bas */
     }
     
     section.title > h1 {
@@ -271,6 +278,8 @@ style: |
 
 *Jean-Baptiste Caillau • Joseph Gergaud • Pierre Martinon • Sophia Sed*
 
+Institute for Celestial Mechanics and Computation of Ephemerides, 25 septembre 2025
+
 ---
 
 ## Contexte
@@ -327,7 +336,7 @@ julia> ∇f(1.0, 2.0)
 </div>
 <div class="column ecosystem">
 
-### 🌐 Écosystème riche et spécialisé
+### Écosystème riche et spécialisé
 
 <style>
 .column h3:first-child {
@@ -461,7 +470,19 @@ plot(sol)
 
 ---
 
+### Architecture SIMD
+
+[Discrétisation du problème de contrôle optimal](https://control-toolbox.org/OptimalControlProblems.jl/stable/problems-introduction.html)
+
+### Autre exemple
+
+[Minimum time orbit transfer](https://control-toolbox.org/Kepler.jl/stable/#orbit)
+
+---
+
 ## 5. Architecture logicielle et bonnes pratiques
+
+<br>
 
 ### 🏗️ Séparation des responsabilités
 
@@ -507,20 +528,20 @@ plot(sol)
 
 ### 📖 Ouverture et communauté
 
-- Documentation complète sur [control-toolbox.org](https://control-toolbox.org) : Manuels pour [OptimalControl.jl](https://control-toolbox.org/OptimalControl.jl/stable), [Tutoriels](https://control-toolbox.org/Tutorials.jl/stable) avancés, Catalogue de [problèmes modélisés](https://control-toolbox.org/OptimalControlProblems.jl/stable).
+- Documentation complète sur [control-toolbox.org](https://control-toolbox.org) : Manuels pour [OptimalControl.jl](https://control-toolbox.org/OptimalControl.jl/stable), [Tutoriels](https://control-toolbox.org/Tutorials.jl/stable) avancés, Catalogue de [problèmes modélisés](https://control-toolbox.org/OptimalControlProblems.jl/previews/PR139).
 
-- Applications phares de la communauté :
+- Applications phares de la communauté ([template](https://github.com/control-toolbox/CTAppTemplate.jl)) :
   - [PWL models of gene regulatory networks](https://agustinyabo.github.io/PWLdynamics.jl/stable) (+ [Binder](https://mybinder.org/v2/gh/agustinyabo/PWLdynamics.jl/main))
   - [Loss control regions in optimal control problems](https://control-toolbox.org/LossControl.jl/stable)
   - [Optimal control in Medical Resonance Imaging](https://control-toolbox.org/MedicalResonanceImaging.jl/stable)
   - [Minimum time orbit transfer](https://control-toolbox.org/Kepler.jl/stable)
 
-<div class="columns" style="margin-top: 20px;">
+<div class="custom-columns community">
 <div class="column">
 
 **Reproductibilité**
 
-<img src="figs/reproduce.png" alt="Reproductibilité" style="max-width: 100%;"/>
+<img src="figs/reproduce_.png" alt="Reproductibilité" style="max-width: 100%;"/>
 
 </div>
 <div class="column">
