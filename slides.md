@@ -576,7 +576,7 @@ plot(sol)
 
 ### Prochaines étapes
 
-- Extension de l'écosystème : Méthodes indirectes, Méthodes homotopiques  
+- Extension de l'écosystème : Méthodes indirectes, homotopiques, raffinement de grille...
 - Renforcement de la communauté : applications, tutoriels, algorithmes...
 
 ---
