@@ -386,7 +386,7 @@ julia> ∇f(1.0, 2.0)
 </style>
 <div class="column">
 <img src="figs/diagramme.png" class="centered-image diagramme" alt="Architecture modulaire et cohérente" width="450px">
-<p class="caption">💡 Architecture modulaire et cohérente</p>
+<p class="caption">💡 Architecture modulaire</p>
 </div>
 </div>
 
@@ -470,9 +470,17 @@ plot(sol)
 
 ---
 
+<br>
+<br>
+<br>
+<br>
+
 ### Architecture SIMD
 
 [Discrétisation du problème de contrôle optimal](https://control-toolbox.org/OptimalControlProblems.jl/stable/problems-introduction.html)
+
+<br>
+<br>
 
 ### Autre exemple
 
