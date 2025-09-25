@@ -536,7 +536,7 @@ plot(sol)
 
 ### 📖 Ouverture et communauté
 
-- Documentation complète sur [control-toolbox.org](https://control-toolbox.org) : Manuels pour [OptimalControl.jl](https://control-toolbox.org/OptimalControl.jl/stable), [Tutoriels](https://control-toolbox.org/Tutorials.jl/stable) avancés, Catalogue de [problèmes modélisés](https://control-toolbox.org/OptimalControlProblems.jl/previews/PR137).
+- Documentation complète sur [control-toolbox.org](https://control-toolbox.org) : Manuels pour [OptimalControl.jl](https://control-toolbox.org/OptimalControl.jl/stable), [Tutoriels](https://control-toolbox.org/Tutorials.jl/stable) avancés, Catalogue de [problèmes modélisés](https://control-toolbox.org/OptimalControlProblems.jl/dev).
 
 - Applications phares de la communauté ([template](https://github.com/control-toolbox/CTAppTemplate.jl)) :
   - [PWL models of gene regulatory networks](https://agustinyabo.github.io/PWLdynamics.jl/stable) (+ [Binder](https://mybinder.org/v2/gh/agustinyabo/PWLdynamics.jl/main))
