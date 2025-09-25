@@ -278,7 +278,7 @@ style: |
 
 *Jean-Baptiste Caillau • Joseph Gergaud • Pierre Martinon • Sophia Sed*
 
-Observatoire de Paris, 25 septembre 2025
+MeetUp Julia, Observatoire de Paris, 25 septembre 2025
 
 ---
 
