@@ -584,7 +584,7 @@ plot(sol)
 ### Ressources
 
 - 📚 Documentation : [control-toolbox.org](https://control-toolbox.org)  
-- 💻 Code source : [github.com/control-toolbox](https://github.com/control-toolbox)  
+- 💻 Codes sources : [github.com/control-toolbox](https://github.com/control-toolbox)  
 - 📧 Contact : Olivier Cots, [olivier.cots@irit.fr](mailto:olivier.cots@irit.fr)
 
 <div>
@@ -599,4 +599,3 @@ plot(sol)
     display: block;
 }
 </style>
- 
