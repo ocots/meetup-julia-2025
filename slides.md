@@ -336,7 +336,7 @@ julia> ∇f(1.0, 2.0)
 </div>
 <div class="column ecosystem">
 
-### Écosystème riche et spécialisé
+### 🌐 Écosystème riche et spécialisé
 
 <style>
 .column h3:first-child {
