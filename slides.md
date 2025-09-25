@@ -278,7 +278,7 @@ style: |
 
 *Jean-Baptiste Caillau • Joseph Gergaud • Pierre Martinon • Sophia Sed*
 
-Institute for Celestial Mechanics and Computation of Ephemerides, 25 septembre 2025
+Observatoire de Paris, 25 septembre 2025
 
 ---
 
